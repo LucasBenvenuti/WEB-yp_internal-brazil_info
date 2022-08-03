@@ -1,0 +1,1202 @@
+@font-face {
+    font-family: "Roboto Black";
+    src: url("../fonts/Roboto-Black.ttf") format("truetype");
+    /*font-weight:bold;*/
+}
+@font-face {
+    font-family: "Roboto BlackItalic";
+    src: url("../fonts/Roboto-BlackItalic.ttf") format("truetype");
+    /*font-weight:900;*/
+}
+@font-face {
+    font-family: "Roboto Bold";
+    src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+    /*font-weight:100;*/
+}
+@font-face {
+    font-family: "Roboto Bold Condensed";
+    src: url("../fonts/Roboto-BoldCondensed.ttf") format("truetype");
+    /*font-weight:normal;*/
+}
+@font-face {
+    font-family: "Roboto Bold Condensed Italic";
+    src: url("../fonts/Roboto-BoldCondensedItalic.ttf") format("truetype");
+    /*font-weight:bold;*/
+}
+@font-face {
+    font-family: "Roboto Bold Italic";
+    src: url("../fonts/Roboto-BoldItalic.ttf") format("truetype");
+    /*font-weight:900;*/
+}
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url("../fonts/Roboto-Condensed.ttf") format("truetype");
+    /*font-weight:100;*/
+}
+@font-face {
+    font-family: "Roboto Condensed Italic";
+    src: url("../fonts/Roboto-CondensedItalic.ttf") format("truetype");
+    /*font-weight:normal;*/
+}
+@font-face {
+    font-family: "Roboto Italic";
+    src: url("../fonts/Roboto-Italic.ttf") format("truetype");
+    /*font-weight:bold;*/
+}
+@font-face {
+    font-family: "Roboto Light";
+    src: url("../fonts/Roboto-Light.ttf") format("truetype");
+    /*font-weight:900;*/
+}
+@font-face {
+    font-family: "Roboto LightItalic";
+    src: url("../fonts/Roboto-LightItalic.ttf") format("truetype");
+    /*font-weight:100;*/
+}
+@font-face {
+    font-family: "Roboto Medium";
+    src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+    /*font-weight:normal;*/
+}
+@font-face {
+    font-family: "Roboto Medium Italic";
+    src: url("../fonts/Roboto-MediumItalic.ttf") format("truetype");
+    /*font-weight:bold;*/
+}
+@font-face {
+    font-family: "Roboto Regular";
+    src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+    /*font-weight:900;*/
+}
+@font-face {
+    font-family: "Roboto Thin";
+    src: url("../fonts/Roboto-Thin.ttf") format("truetype");
+    /*font-weight:100;*/
+}
+@font-face {
+    font-family: "Roboto Thin Italic";
+    src: url("../fonts/Roboto-ThinItalic.ttf") format("truetype");
+    /*font-weight:normal;*/
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    outline: none !important;
+}
+
+.caixas-invisiveis {
+    display: none;
+}
+
+.state {
+    cursor: pointer;
+    fill: #d4d4d4;
+}
+
+.state:hover {
+    fill: #a2a2a2;
+    transition: 0.2s ease-in-out all;
+}
+
+.state-df {
+    cursor: pointer;
+    fill: #bbbbbb;
+}
+
+.state-df:hover {
+    fill: #686868;
+    transition: 0.2s ease-in-out all;
+}
+
+.state-empty {
+    cursor: default;
+    fill: #d4d4d4;
+}
+
+#layoutBase {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    opacity: 0.7;
+    background: url("../LAYOUT/Layout_1_new.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: -1;
+    display: none;
+}
+
+#maisBrasil-completo {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 0px 0% 0px 0%;
+    overflow: hidden;
+}
+
+.lightbox-imagens-maisBrasil-class {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 15;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease-in-out all;
+}
+.aparecer-lightbox-images {
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.2s ease-in-out all;
+}
+#fundo-lightbox-imagens-maisBrasil {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+#close-btn-lightbox-imagens-maisBrasil {
+    width: 2%;
+    height: 4%;
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    background: url("../images/Outros/closeBtn_clear.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.5;
+    transition: 0.2s ease-in-out all;
+    cursor: pointer;
+}
+#close-btn-lightbox-imagens-maisBrasil:hover {
+    opacity: 1;
+    transition: 0.2s ease-in-out all;
+}
+
+.cont-imagens-maisBrasil-class {
+    width: 70%;
+    height: 80%;
+    position: absolute;
+    /*    float:left;*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0px 0% 0px 0%;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease-in-out all;
+    /*    background-color:lightcoral;*/
+}
+.cont-imagens-mapa-maisBrasil-class {
+    width: 70%;
+    height: 80%;
+    position: absolute;
+    /*    float:left;*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0px 0% 0px 0%;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease-in-out all;
+    /*    background-color:lightcoral;*/
+}
+
+.cont-images-maisBrasil-aparecer {
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.2s ease-in-out all;
+}
+
+.img-carrossel-maisBrasil {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    float: left;
+    margin: 0px 0% 0px 0%;
+    object-fit: contain;
+}
+.img-mapa-maisBrasil {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    float: left;
+    margin: 0px 0% 0px 0%;
+    object-fit: contain;
+}
+
+#menu-lateral-esq {
+    width: 13.2%;
+    height: 100%;
+    position: relative;
+    float: left;
+    margin: 0px -14% 0px 0%;
+    border-right: 2px solid #a2a2a2;
+    overflow: hidden;
+    z-index: 1;
+    background-color: white;
+}
+#menu-topo-lateral-esq {
+    width: 84%;
+    height: auto;
+    position: relative;
+    float: left;
+    padding: 35% 6% 8% 10%;
+    background-color: white;
+    overflow: hidden;
+    border-bottom: 2px solid #a2a2a2;
+}
+#logo-mapa-brasil {
+    width: 100%;
+    height: 6%;
+    position: relative;
+    float: left;
+    margin: 0px 0% 0px 0%;
+    background: url("../images/Outros/iconeCompleto_MaisBrasil.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#menu-baixo-lateral-esq {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 0px 0% 0px 0%;
+    /*    background-color:white;*/
+    overflow: hidden;
+}
+
+#cont-itens-menu-baixo-lateral-esq {
+    width: 88%;
+    height: 63%;
+    position: relative;
+    float: left;
+    margin: 10% 2% 0px 10%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#close-btn {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 30%;
+    right: -6%;
+    background: url("../images/Outros/closeBtn.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: 0.2s ease-in-out all;
+}
+#close-btn:hover {
+    opacity: 1;
+    transition: 0.2s ease-in-out all;
+}
+
+.item-menu-lateral {
+    width: auto;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 0px 0% 11px 0%;
+    font-family: "Roboto Bold";
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: #2a2a2a;
+    cursor: pointer;
+    opacity: 0.5;
+    pointer-events: all;
+    clear: both;
+    transition: 0.2s ease-in-out all;
+}
+.item-menu-lateral:hover {
+    opacity: 1;
+    transition: 0.2s ease-in-out all;
+}
+.item-menu-lateral-selecionado {
+    opacity: 1;
+    pointer-events: none;
+}
+
+#cont-itens-menu-baixo-lateral-esq::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
+}
+
+#cont-itens-menu-baixo-lateral-esq::-webkit-scrollbar {
+    width: 6px;
+    background-color: #f5f5f5;
+}
+
+#cont-itens-menu-baixo-lateral-esq::-webkit-scrollbar-thumb {
+    background-color: #2a2a2a;
+}
+
+#img-editoraopet {
+    width: 60%;
+    height: 6%;
+    position: relative;
+    float: left;
+    margin: 20% 21.8% 0px 18.2%;
+    background: url("../images/Outros/logo_editora_opet_preto.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#menu-lateral-dir {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0%;
+}
+
+#cont-mapa-brasil {
+    width: 55%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 90px 15.6% 0px 29.4%;
+    /*    transform:translate(-51%, 0px);*/
+}
+#titulo-mapa-brasil {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 0px 0% 0px 0%;
+    font-family: "Roboto Bold";
+    font-size: 33px;
+    line-height: 34px;
+    font-weight: 700;
+    color: #2a2a2a;
+    text-align: center;
+    letter-spacing: -0.4px;
+}
+#subtitulo-mapa-brasil {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 0px 0% 0px 0%;
+    font-family: "Roboto Bold";
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 700;
+    color: #2a2a2a;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+#mapa-brasil {
+    width: 60%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 75px 20% 0px 20%;
+}
+#mapaCompleto-brasil {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 0px 0% 0px 0%;
+    /*    background-color:lightgreen;*/
+}
+
+.valoresEstadosInvisiveis {
+    display: none;
+}
+
+.cont-box-nome-estado {
+    display: none;
+}
+
+.lightbox-mapa-brasil-class {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0px 0% 0px 0%;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease-in-out all;
+    /*    display:none;*/
+}
+.lightbox-mapa-brasil-class-apareceu {
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.2s ease-in-out all;
+}
+
+#fundo-lightbox-mapa-brasil {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    float: left;
+    margin: 0px 0% 0px 0%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: 0.2s ease-in-out all;
+}
+
+.conteudo-lightbox-mapa-brasil-class {
+    width: 39%;
+    /*    width:43.4%;*/
+    height: 100%;
+    position: absolute;
+    right: -45%;
+    background-color: white;
+    box-shadow: -5px 0px 10px 0px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease-in-out all;
+}
+
+.conteudo-lightbox-mapa-brasil-class-apareceu {
+    right: 0%;
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.2s ease-in-out all;
+}
+
+#cont-comp-lightbox-mapa-brasil {
+    width: 85%;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*    background-color:lightgray;*/
+}
+
+#cont-itens-lightbox-mapa-brasil {
+    width: 100%;
+    height: 13%;
+    position: relative;
+    float: left;
+    margin: 0px 0% 3% 0%;
+    text-align: center;
+}
+
+.item-menu {
+    /*    width:auto;*/
+    /*    height:auto;*/
+    position: relative;
+    float: left;
+    /*    display:inline-block;*/
+}
+
+.caixa-aspectosGerais {
+    width: 22%;
+    height: auto;
+    margin: 0px 0% 0px 0%;
+}
+.caixa-culturaTurismo {
+    width: 25%;
+    height: auto;
+    margin: 0px 2% 0px 4%;
+}
+.caixa-esportes {
+    width: 14%;
+    height: auto;
+    margin: 0px 4% 0px 2%;
+}
+.caixa-politicaSociedade {
+    width: 27%;
+    height: auto;
+    margin: 0px 0% 0px 0%;
+}
+
+.sem-margem-esq {
+    margin: 0px 1.7% 0px 0%;
+}
+.sem-margem-dir {
+    margin: 0px 0% 0px 1.7%;
+}
+
+.caixa-item-menu {
+    position: relative;
+    float: left;
+    margin: 0px 0% 0px 0%;
+    transition: 0.2s ease-in-out all;
+}
+
+.img-item-menu {
+    width: 85px;
+    height: 85px;
+    position: relative;
+    display: inline-block;
+    margin: 0px 0% 0px 0%;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.2s ease-in-out all;
+}
+
+.item-aspectosGerais {
+    background: url("../images/Outros/iconeAspectosGerais.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.item-culturaTurismo {
+    background: url("../images/Outros/iconeCulturaTurismo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.item-esportes {
+    background: url("../images/Outros/iconeEsportes.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.item-politicaSociedade {
+    background: url("../images/Outros/iconePoliticaSociedade.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.txt-item-menu {
+    width: auto;
+    height: auto;
+    position: relative;
+    display: block;
+    margin: 7px 0% 0px 0%;
+    font-family: "Roboto Regular";
+    font-size: 15px;
+    color: #2a2a2a;
+    line-height: 15px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.2s ease-in-out all;
+}
+
+.item-menu:hover .img-item-menu {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    opacity: 1;
+    transition: 0.2s ease-in-out all;
+}
+.item-menu:hover .txt-item-menu {
+    opacity: 1;
+    transition: 0.2s ease-in-out all;
+}
+
+.menu-secundario {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    text-align: center;
+    top: 80%;
+    /*    transform:translate(0%,50%);*/
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease-in-out all;
+    z-index: 15;
+}
+
+.item-menu:hover .menu-secundario {
+    top: 85%;
+    opacity: 1;
+    transition: 0.2s ease-in-out all;
+}
+
+.item-menu:hover .caixa-menu-secundario {
+    pointer-events: all;
+    transition: 0.2s ease-in-out all;
+}
+
+.caixa-menu-secundario {
+    /*    width:auto;*/
+    height: auto;
+    position: relative;
+    display: inline-block;
+    /*    top:80%;*/
+    /*    left:-30%;*/
+    /*    transform:translate(0%,0%);*/
+    pointer-events: none;
+    text-align: center;
+}
+
+.caixa-menu-aspectosGerais {
+    width: 170%;
+    left: -35%;
+}
+.caixa-menu-culturaTurismo {
+    width: 100%;
+    left: 0%;
+}
+.caixa-menu-esportes {
+    width: 198%;
+    left: -49%;
+}
+.caixa-menu-politicaSociedade {
+    width: 120%;
+    left: -10%;
+}
+
+.triangulo-superior-menu-secundario {
+    width: 47px;
+    height: 47px;
+    position: relative;
+    display: inline-block;
+    margin: 0px 0% 0px 0%;
+    background-color: white;
+    border-left: 1px solid #2a2a2a;
+    border-top: 1px solid #2a2a2a;
+    transform: rotate(45deg);
+    z-index: 1;
+}
+
+.infos-menu-secundario {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: inline-block;
+    margin: -24px 0% 0px 0%;
+    background-color: white;
+    border: 1px solid #2a2a2a;
+}
+
+.cont-itens-menu-secundario {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 10px 0% 5px 0%;
+}
+
+.item-menu-secundario {
+    width: 90%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 0px 0% 5px 0%;
+    padding: 5px 5% 5px 5%;
+    font-family: "Roboto Regular";
+    font-size: 16px;
+    line-height: 20px;
+    color: #2a2a2a;
+    text-align: left;
+    font-weight: 500;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: 0.2s ease-in-out all;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+.item-menu-secundario:hover {
+    color: white;
+    background-color: #25de63;
+    opacity: 1;
+    transition: 0.2s ease-in-out all;
+}
+
+#cont-baixo-informacoes {
+    width: 100%;
+    height: 84.5%;
+    position: relative;
+    float: left;
+    margin: 0% 0% 0px 0%;
+}
+
+.mapa-demografico-estados-informacoes-class {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /*    float:left;*/
+    margin: 0px 0% 0px 0%;
+    opacity: 0;
+    pointer-events: none;
+    background-color: lightgray;
+    cursor: pointer;
+    transition: 0.2s ease-in-out all;
+    /*
+    background:url("../images/Outros/estadoPadrao.jpg");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:contain;
+*/
+    /*    display:none;*/
+    /*    z-index:1;*/
+}
+
+.cont-lista-topicos-informacoes-class {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /*    float:left;*/
+    margin: 0px 0% 0px 0%;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease-in-out all;
+    /*    background-color:cadetblue;*/
+
+    /*    display:none;*/
+}
+
+#nome-topico-selecionado-informacao {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 0px 0% 20px 0%;
+    font-family: "Roboto Bold";
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #a2a2a2;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#lista-topicos-informacao {
+    width: 100%;
+    height: 480px;
+    position: relative;
+    float: left;
+    margin: 10% 0% 0px 0%;
+    /*    background-color:lightcoral;*/
+}
+
+.cont-topico-materias {
+    width: 60%;
+    height: 400px;
+    position: relative;
+    float: left;
+    margin: 15px 3% 40px 3%;
+}
+
+.topico-materias {
+    /*    width:60%;*/
+    width: 100%;
+    height: 400px;
+    position: relative;
+    /*    float:left;*/
+    /*    display:inline-block;*/
+    /*    margin:15px 3% 40px 3%;*/
+    background-color: #f9f9f9;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    opacity: 0.6;
+    top: 0%;
+    transition: 0.2s ease-in-out all;
+    /*    background-color:aqua;*/
+}
+.topico-materias:hover {
+    opacity: 1;
+    top: -2%;
+    transition: 0.2s ease-in-out all;
+}
+
+.img-topico-materias {
+    width: 94%;
+    height: 290px;
+    position: relative;
+    float: left;
+    margin: 10px 3% 10px 3%;
+    background: url("../images/Outros/ImagenX.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.cont-txt-topicos-materias {
+    width: 90%;
+    height: 80px;
+    position: relative;
+    float: left;
+    margin: 0px 5% 7px 5%;
+    overflow: hidden;
+    pointer-events: none;
+}
+.tit-txt-topicos-materias {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 0px 0% 0px 0%;
+    font-family: "Roboto Bold";
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: left;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2a2a2a;
+}
+.corpo-txt-topicos-materias {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 0px 0% 0px 0%;
+    font-family: "Roboto Regular";
+    font-weight: 500;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2a2a2a;
+}
+.gradiente-final-topicos-materias {
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    bottom: 0%;
+    background: rgb(255, 255, 255);
+    background: -moz-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.7) 40%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background: -webkit-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.7) 40%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.7) 40%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+}
+
+.cont-informacoes-class {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /*    float:left;*/
+    margin: 0px 0% 0px 0%;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease-in-out all;
+    /*    background-color:aquamarine;*/
+
+    /*    display:none;*/
+}
+
+.cont-infos-apareceu {
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.2s ease-in-out all;
+}
+
+.cont-carrossel-topico-class {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 0px 0% 0px 0%;
+    display: block;
+    transition: 0.2s ease-in-out all;
+    /*    background-color:lightcyan;*/
+}
+
+.sem-cont-carrossel-topico-class {
+    display: none;
+    transition: 0.2s ease-in-out all;
+}
+
+#cont-imgs-topico {
+    width: 100%;
+    height: 37.7%;
+    position: relative;
+    float: left;
+    margin: 0px 0% 0px 0%;
+    /*    background-color:lightcoral;*/
+}
+
+.img-topico-selecionado {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    float: left;
+    margin: 0px 3% 0px 3%;
+    background-color: lightgreen;
+    cursor: pointer;
+}
+
+.gradiente-carrossel-imagens {
+    width: 102%;
+    height: 102%;
+    position: absolute;
+    top: -1%;
+    left: -1%;
+    z-index: 1;
+    background: rgb(255, 255, 255);
+    background: -moz-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.5998774509803921) 20%,
+        rgba(255, 255, 255, 0) 25%,
+        rgba(255, 255, 255, 0) 75%,
+        rgba(255, 255, 255, 0.5998774509803921) 80%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.5998774509803921) 20%,
+        rgba(255, 255, 255, 0) 25%,
+        rgba(255, 255, 255, 0) 75%,
+        rgba(255, 255, 255, 0.5998774509803921) 80%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.5998774509803921) 20%,
+        rgba(255, 255, 255, 0) 25%,
+        rgba(255, 255, 255, 0) 75%,
+        rgba(255, 255, 255, 0.5998774509803921) 80%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+    pointer-events: none;
+}
+
+.informacoes-topico-selecionado-class {
+    width: 100%;
+    height: 57.3%;
+    position: relative;
+    float: left;
+    margin: 6.2% 0% 0px 0%;
+    /*    background-color:lightcoral;*/
+    transition: 0.2s ease-in-out all;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.informacoes-topico-selecionado-class-sem-carrossel {
+    height: 93.8%;
+    transition: 0.2s ease-in-out all;
+}
+
+.informacoes-topico-selecionado-class::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
+}
+
+.informacoes-topico-selecionado-class::-webkit-scrollbar {
+    width: 6px;
+    background-color: #f5f5f5;
+}
+
+.informacoes-topico-selecionado-class::-webkit-scrollbar-thumb {
+    background-color: #2a2a2a;
+}
+
+#nome-topico-selecionado {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 0px 0% 0px 0%;
+    font-family: "Roboto Bold";
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    text-align: left;
+    color: #a2a2a2;
+    letter-spacing: 0.5px;
+}
+#titulo-topico-selecionado {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 2px 0% 0px 0%;
+    font-family: "Roboto Bold";
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+    text-align: left;
+    color: #2a2a2a;
+    letter-spacing: 0.5px;
+}
+#subtitulo-topico-selecionado {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 2px 0% 15px 0%;
+    font-family: "Roboto Bold";
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 400;
+    text-align: left;
+    color: #2a2a2a;
+    letter-spacing: 0.5px;
+}
+#corpo-topico-selecionado {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 2px 0% 2px 0%;
+    font-family: "Roboto Regular";
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: left;
+    color: #2a2a2a;
+    letter-spacing: 0.5px;
+}
+
+@media only screen and (min-width: 1500px) and (max-width: 1750px) {
+    .img-item-menu {
+        width: 65px;
+        height: 65px;
+    }
+
+    .item-menu-secundario {
+        font-size: 13px;
+    }
+    .caixa-menu-aspectosGerais {
+        width: 162%;
+        left: -31%;
+    }
+    .caixa-menu-culturaTurismo {
+        width: 90%;
+        left: 0%;
+    }
+    .caixa-menu-esportes {
+        width: 192%;
+        left: -46%;
+    }
+    .caixa-menu-politicaSociedade {
+        width: 114%;
+        left: -7%;
+    }
+
+    .caixa-aspectosGerais {
+        width: 21%;
+    }
+    .caixa-culturaTurismo {
+        width: 25%;
+        margin: 0px 2.5% 0px 5%;
+    }
+    .caixa-esportes {
+        width: 13%;
+        margin: 0px 5% 0px 2.5%;
+    }
+    .caixa-politicaSociedade {
+        width: 26%;
+    }
+
+    .txt-item-menu {
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 1500px) {
+    .img-item-menu {
+        width: 55px;
+        height: 55px;
+    }
+
+    .item-menu-secundario {
+        font-size: 13px;
+    }
+    .caixa-menu-aspectosGerais {
+        width: 188%;
+        left: -44%;
+    }
+    .caixa-menu-culturaTurismo {
+        width: 104%;
+        left: -2%;
+    }
+    .caixa-menu-esportes {
+        width: 226%;
+        left: -63%;
+    }
+    .caixa-menu-politicaSociedade {
+        width: 134%;
+        left: -17%;
+    }
+
+    .caixa-aspectosGerais {
+        width: 21%;
+    }
+    .caixa-culturaTurismo {
+        width: 25%;
+        margin: 0px 2.5% 0px 5%;
+    }
+    .caixa-esportes {
+        width: 13%;
+        margin: 0px 5% 0px 2.5%;
+    }
+    .caixa-politicaSociedade {
+        width: 26%;
+    }
+
+    .txt-item-menu {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 1750px) {
+    .item-menu-lateral {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .triangulo-superior-menu-secundario {
+        width: 37px;
+        height: 37px;
+    }
+
+    .menu-secundario {
+        top: 65%;
+    }
+
+    .item-menu:hover .menu-secundario {
+        top: 70%;
+        opacity: 1;
+        transition: 0.2s ease-in-out all;
+    }
+
+    .infos-menu-secundario {
+        margin: -19px 0% 0px 0%;
+    }
+    /*
+    #cont-comp-lightbox-mapa-brasil{
+        width:90%;
+    }
+*/
+    #close-btn {
+        width: 20px;
+        height: 20px;
+    }
+}
